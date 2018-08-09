@@ -1,0 +1,49 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Transform": "AWS::Serverless-2016-10-31",
+	"Parameters": {
+		"BucketName": {
+			"Type": "String"
+		}
+	},
+	"Resources": {
+		"emailLambda": {
+			"Type": "AWS::Serverless::Function",
+			"Properties": {
+				"CodeUri": {
+					"Bucket": {
+						"Ref": "BucketName"
+					},
+					"Key": "LambdaEmailFromPost.js.zip"
+				},
+				"Description": "EmailHandler",
+				"FunctionName": "email-handler",
+				"Handler": "LambdaEmailFromPost.handler",
+				"Role": {
+					"Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/basic-lambda-execution-role"
+				},
+				"Policies": ["AWSLambdaFullAccess"],
+				"Runtime": "nodejs8.10",
+				"Timeout": 3,
+				"MemorySize": 256,
+				"Events": {
+					"PostResource": {
+						"Type": "Api",
+						"Properties": {
+							"Path": "/handlePost",
+							"Method": "post"
+						}
+					}
+				}
+			}
+		}
+	},
+	"Outputs": {
+		"ApiURL": {
+			"Description": "API endpoint for the lambdas",
+			"Value": {
+				"Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+			}
+		}
+	}
+}

@@ -29,10 +29,15 @@ h4 {
 	line-height: 35px;
 	color: #555;
 }
-h5 {
-	text-transform: uppercase;
+h5-strong{
 	font-weight: 700;
 	line-height: 20px;
+	color: #333;
+}
+h5 {
+	font-weight: 700;
+	line-height: 20px;
+	color: #f6f6f6;
 }
 p {
 	font-size: 14px;
@@ -163,7 +168,9 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/intro-bg.jpg) no-repeat center center fixed;
+	background:
+		linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
+		url(../img/intro-bg.jpeg) no-repeat center center fixed;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
