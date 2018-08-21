@@ -26,12 +26,18 @@ h3 {
 }
 h4 {
 	font-weight: 500;
+	line-height: 35px;
 	color: #555;
 }
-h5 {
-	text-transform: uppercase;
+h5-strong{
 	font-weight: 700;
 	line-height: 20px;
+	color: #333;
+}
+h5 {
+	font-weight: 700;
+	line-height: 20px;
+	color: #f6f6f6;
 }
 p {
 	font-size: 14px;
@@ -162,7 +168,9 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/intro-bg.jpg) no-repeat center center fixed;
+	background:
+		linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
+		url(../img/intro-bg.jpeg) no-repeat center center fixed;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -259,7 +267,9 @@ hr {
 /* Services Section */
 #services {
 	padding: 140px 0;
-	background: url(../img/services-bg.jpg);
+	background:
+		linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
+		url(../img/services-bg.jpeg);
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -281,6 +291,34 @@ hr {
 	margin-top: 40px;
 }
 #services i.fa {
+	font-size: 36px;
+	color: #E75926;
+	transition: all 0.5s;
+}
+#students {
+	padding: 140px 0;
+	background: #f6f6f6;
+	background-size: cover;
+	background-attachment: fixed;
+}
+#students .service {
+	padding: 20px 10px;
+}
+#students h2 {
+	color: #000000;
+}
+#students h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #000000;
+}
+#students p {
+	color: #000000;
+}
+.space {
+	margin-top: 40px;
+}
+#students i.fa {
 	font-size: 36px;
 	color: #E75926;
 	transition: all 0.5s;
@@ -435,7 +473,9 @@ img.img-thumbnail.team-img {
 }
 /* Testimonials Section */
 #testimonials {
-	background: url(../img/testimonials-bg.jpg);
+	background:
+		linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
+		url(../img/testimonials-bg.jpeg);
 	background-size: cover;
 	background-attachment: fixed;
 	color: #ddd;
