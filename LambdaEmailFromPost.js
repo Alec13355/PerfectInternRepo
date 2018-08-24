@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = (event, context, callback) => {
+    console.log(event);
     const response = {
       statusCode: 200,
       headers: {
@@ -14,11 +15,11 @@ exports.handler = (event, context, callback) => {
     const email= process.env.email;
     const password= process.env.password;
 
-    var transporter = nodemailer.createTransport("smtps://"+email+":"+encodeURIComponent(password) + "@email-smtp.us-east-1.amazonaws.com:465");
+    var transporter = nodemailer.createTransport("smtps://"+email+":"+encodeURIComponent(password) + "@smtp.gmail.com:465");
 
     let mailOptions = {
-        from: '"Source Allies Recruitment 👻" <aah1@mac.com>', // sender address
-        to: 'aah1@mac.com', // list of receivers
+        from: '"Perfect Intern Recruitment 👻" <aah1@mac.com>', // sender address
+        to: 'aah1@mac.com', //list of receivers
         subject: 'Applicant: '+result.fullname, // Subject line
         html: `
         <p><strong>Full Name:&nbsp;</strong> ${result.fullname}</p>

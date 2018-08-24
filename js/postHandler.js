@@ -12,9 +12,10 @@ async function sendData(fullname, email, message, file, fileFormat) {
 
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", 'https://puaxrlsatf.execute-api.us-east-1.amazonaws.com/Prod/handlePost', true);
+    var url = "https://puaxrlsatf.execute-api.us-east-1.amazonaws.com/Prod/email-handler";
+    xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-
+    console.log(json.file);
     xhr.send(JSON.stringify(json));
     xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
