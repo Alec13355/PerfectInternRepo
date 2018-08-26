@@ -1,25 +1,28 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = (event, context, callback) => {
-    console.log(event);
     const response = {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Methods": "POST,OPTIONS",
+        "Access-Control-Max-Age": 3600,
         "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
       },
       body: "success"
     };
 
     const result = JSON.parse(event.body);
+    console.log(result);
     const email= process.env.email;
     const password= process.env.password;
 
-    var transporter = nodemailer.createTransport("smtps://"+email+":"+encodeURIComponent(password) + "@smtp.gmail.com:465");
+    var transporter = nodemailer.createTransport("smtps://"+email+":"+encodeURIComponent(password) + "@email-smtp.us-east-1.amazonaws.com:465");
 
     let mailOptions = {
-        from: '"Perfect Intern Recruitment 👻" <aah1@mac.com>', // sender address
-        to: 'aah1@mac.com', //list of receivers
+        from: '"Perfect Intern Recruitment 👻" <alecharrison@perfectintern.com>', // sender address
+        to: 'alecharrison@perfectintern.com', //list of receivers
         subject: 'Applicant: '+result.fullname, // Subject line
         html: `
         <p><strong>Full Name:&nbsp;</strong> ${result.fullname}</p>
