@@ -204,11 +204,21 @@ hr {
 	display: table-cell;
 	vertical-align: middle;
 }
-#intro .intro-body H1 {
-	font-size: 76px;
-	font-weight: 700;
-	color: rgba(255,255,255,0.8);
-	text-transform: uppercase;
+@media all {
+	#intro .intro-body H1 {
+		font-size: 76px;
+		font-weight: 700;
+		color: rgba(255,255,255,0.8);
+		text-transform: uppercase;
+	}
+}
+@media(max-width:420px) {
+	#intro .intro-body H1 {
+		font-size: 76px;
+		font-weight: 400;
+		color: rgba(255,255,255,0.8);
+		text-transform: uppercase;
+	}
 }
 #intro .intro-body .brand-heading {
 	color: #E75926;
@@ -288,13 +298,24 @@ hr {
 	margin-bottom: 30px;
 }
 /* Services Section */
-#services {
-	padding: 140px 0;
-	background:
-		linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
-		url(../img/services-bg.jpeg);
-	background-size: cover;
-	background-attachment: fixed;
+@media all {
+	#services {
+		background:
+			linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
+			url(../img/services-bg.jpeg);
+			background-size: 100% 100%;
+			background-attachment: fixed;
+	}
+}
+
+@media (max-width: 780px){
+	#services {
+		background:
+			linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
+			url(../img/services-bg.jpeg);
+			background-size: 100% 250%;
+			background-attachment: fixed;
+	}
 }
 #services .service {
 	padding: 20px 10px;
