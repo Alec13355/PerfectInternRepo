@@ -21,8 +21,8 @@ exports.handler = (event, context, callback) => {
     var transporter = nodemailer.createTransport("smtps://"+email+":"+encodeURIComponent(password) + "@email-smtp.us-east-1.amazonaws.com:465");
 
     let mailOptions = {
-        from: '"Perfect Intern Recruitment 👻" <alecharrison@perfectintern.com>', // sender address
-        to: 'alecharrison@perfectintern.com', //list of receivers
+        from: '"Workers Way Recruitment 👻" <alec.harrison@workersway.org>', // sender address
+        to: 'alec.harrison@workersway.org', //list of receivers
         subject: 'Applicant: '+result.fullname, // Subject line
         html: `
         <p><strong>Full Name:&nbsp;</strong> ${result.fullname}</p>
@@ -31,7 +31,7 @@ exports.handler = (event, context, callback) => {
         <p>Resume is Attached,</p>
         <p>Have a great day!</p>
         <hr />
-        <p style="text-align: center;">www.PerfectIntern.com</p>
+        <p style="text-align: center;">www.workersway.org</p>
         `, // html body
         attachments: [
                 {   // utf-8 string as an attachment
