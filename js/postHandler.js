@@ -23,7 +23,7 @@ async function sendData1(fullname, email, message, file, fileFormat) {
         document.getElementById("studentButton").style.display = 'none';
         console.log(xhr.responseText);
             if(xhr.responseText === 'success'){
-                document.getElementById("thanks").innerHTML = 'We have received your information, and will reachout shortly!';
+                document.getElementById("thanks").innerHTML = 'We have received your information, and will reach out shortly!';
             }else{
                 document.getElementById("thanks").innerHTML = 'There was an issue sending your application, please try again!';
             }
