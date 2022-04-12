@@ -1,5 +1,5 @@
 var companyForm = document.getElementById("companyForm");
-const url = "https://el1d1opu64.execute-api.us-east-1.amazonaws.com/Prod/email-handler";
+const url = "https://www.workersway.org/api/HttpTrigger";
 async function sendData(fullname, email, message) {
     const json = {
         fullname,
@@ -17,11 +17,7 @@ async function sendData(fullname, email, message) {
     if (xhr.readyState == XMLHttpRequest.DONE) {
         document.getElementById("loader").style.display = 'none';
         document.getElementById("companyButton").style.display = 'none';
-            if(xhr.responseText === 'success'){
-                document.getElementById("thanks").innerHTML = 'We have received your request and will reach out shortly.';
-            }else{
-                document.getElementById("thanks").innerHTML = 'There was an issue sending your request, please try again!';
-            }
+        document.getElementById("thanks").innerHTML = 'We have received your request and will reach out shortly.';
         }
     }
 

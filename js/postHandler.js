@@ -1,7 +1,7 @@
 var studentForm = document.getElementById("studentForm");
 
-// const url1 = "https://www.workersway.org/api/HttpTrigger1";
-const url1 = "http://localhost:7071/api/HttpTrigger1"
+const url1 = "https://www.workersway.org/api/HttpTrigger1";
+// const url1 = "http://localhost:7071/api/HttpTrigger1"
 // const url1 = "http://localhost:7071/api"
 
 async function sendData1(fullname, email, message, file, fileFormat) {
@@ -22,11 +22,7 @@ async function sendData1(fullname, email, message, file, fileFormat) {
     if (xhr.readyState == XMLHttpRequest.DONE) {
         document.getElementById("loader").style.display = 'none';
         document.getElementById("studentButton").style.display = 'none';
-            if(xhr.responseText === 'success'){
-                document.getElementById("thanks").innerHTML = 'We have received your information, and will reach out shortly!';
-            }else{
-                document.getElementById("thanks").innerHTML = 'There was an issue sending your application, please try again!';
-            }
+        document.getElementById("thanks").innerHTML = 'We have received your information, and will reach out shortly!';
         }
     }
 
