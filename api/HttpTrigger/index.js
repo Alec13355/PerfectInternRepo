@@ -8,6 +8,7 @@ module.exports = async function (context, req) {
         dynamic_template_data: {
             fullName: req.body.fullname,
             email: req.body.email,
+            message: req.body.message,
         },
       };
     sgMail

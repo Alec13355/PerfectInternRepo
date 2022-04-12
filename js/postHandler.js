@@ -54,6 +54,7 @@ studentForm.addEventListener("submit", function (event) {
    var fileFormat = document.getElementById("resume").value;
    fileFormat = fileFormat.substr(fileFormat.length -4);
    var file = document.getElementById("resume").files[0];
+   var message = document.getElementById("message").value;
 
   getBase64(file).then(
       data => sendData1(fullname, email, message, data, fileFormat)
