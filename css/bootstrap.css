@@ -4186,7 +4186,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-decoration: none;
 }
 .navbar-brand > img {
-  display: block;
+  margin-top: -15px;
+  height: 34px;
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
